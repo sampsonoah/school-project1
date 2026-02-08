@@ -1,7 +1,7 @@
 # NOAH INTERNATIONAL MINISTRIES Website
 
-**Author:** Sampson Noah  
-**Index Number:** [Your Index Number Here]  
+**Author:** Sampson Noah Dowuona
+**Index Number:** 2425140007  
 
 ---
 
@@ -37,4 +37,4 @@ The website is built with **HTML, CSS, and basic JavaScript**.
 - Large video files were removed to comply with GitHub size limits.  
 - Mobile-friendly design with a working navigation menu.  
 
-**Sampson Noah – [Your Index Number Here]**
+
