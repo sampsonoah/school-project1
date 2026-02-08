@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sermons | Grace Community Church</title>
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* ===== RESET ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.7;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: #1a252f;
+            padding: 15px 10%;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: #e67e22;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* ===== HERO / PAGE TITLE ===== */
+        .page-title {
+            height: 60vh;
+            background:
+                linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url("./images/sermon-hero.jpg") center / cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+            margin-top: 70px;
+        }
+
+        .page-title h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .page-title p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* ===== MAIN CONTENT ===== */
+        main {
+            max-width: 1100px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .sermon-filter {
+            margin-bottom: 30px;
+            color: #7f8c8d;
+        }
+
+        /* ===== SERMON GRID ===== */
+        .sermon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .sermon-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .sermon-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .sermon-image {
+            position: relative;
+        }
+
+        .sermon-image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .sermon-image .date {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: #e67e22;
+            color: white;
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            border-radius: 3px;
+        }
+
+        .sermon-info {
+            padding: 20px;
+        }
+
+        .sermon-info h3 {
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+
+        .speaker {
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .description {
+            margin-bottom: 20px;
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .sermon-link {
+            display: inline-block;
+            color: #e67e22;
+            border: 2px solid #e67e22;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .sermon-link:hover {
+            background: #e67e22;
+            color: white;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #1a252f;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+
+            nav ul {
+                position: absolute;
+                top: 65px;
+                left: 0;
+                width: 100%;
+                background: #1a252f;
+                flex-direction: column;
+                display: none;
+                padding: 20px 0;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .page-title h1 {
+                font-size: 2.2rem;
+            }
+        }
+        .sermon-hero {
+    height: 60vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("./images/sermon.jpg") center / cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+}
+
+.sermon-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.sermon-hero p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sermon-hero {
+        height: 50vh;
+    }
+
+    .sermon-hero h1 {
+        font-size: 2.2rem;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+    <nav>
+        <div class="logo">NOAH INTERNATIONAL MINISTRIES</div>
+
+        <i class="fas fa-bars menu-toggle" id="menuToggle"></i>
+
+        <ul id="navMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="sermons.html">Sermons</a></li>
+            <li><a href="ministries.html">Ministries</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="page-title sermon-hero">
+    <div class="hero-content">
+        <h1>Latest Messages</h1>
+        <p>Watch or listen to our recent teachings</p>
+    </div>
+</section>
+
+
+<!-- ===== MAIN ===== -->
+<main>
+
+    <div class="sermon-filter">
+        <p>Filtering by: <strong>Recent Series</strong></p>
+    </div>
+
+    <div class="sermon-grid">
+
+        <article class="sermon-card">
+            <div class="sermon-image">
+                <img src="./images/sermon11.jpg" alt="Walking in Faith">
+                <span class="date">Jan 18, 2026</span>
+            </div>
+            <div class="sermon-info">
+                <h3>Walking in Faith</h3>
+                <p class="speaker">Pastor John Doe</p>
+                <p class="description">
+                    Exploring what it means to trust God in the middle
+                    of life's biggest storms.
+                </p>
+                <a href="" class="sermon-link">Watch Video</a>
+            </div>
+        </article>
+
+        <article class="sermon-card">
+            <div class="sermon-image">
+                <img src="./images/sermon12.jpg" alt="The Power of Prayer">
+                <span class="date">Jan 11, 2026</span>
+            </div>
+            <div class="sermon-info">
+                <h3>The Power of Prayer</h3>
+                <p class="speaker">Pastor SAMSON</p>
+                <p class="description">
+                    A deep dive into the Lord's Prayer and how it
+                    transforms our daily walk.
+                </p>
+                <a href="" class="sermon-link">Watch Video</a>
+            </div>
+        </article>
+
+        <article class="sermon-card">
+            <div class="sermon-image">
+                <img src="./images/sermon11.Jpg" alt="New Beginnings">
+                <span class="date">Jan 4, 2026</span>
+            </div>
+            <div class="sermon-info">
+                <h3>New Beginnings</h3>
+                <p class="speaker">Pastor John Doe</p>
+                <p class="description">
+                    Starting the year with a focus on God's grace
+                    and renewal.
+                </p>
+                <a href="" class="sermon-link">Watch Video</a>
+            </div>
+        </article>
+
+    </div>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <p>&copy; 2026 Grace Community Church. All rights reserved.</p>
+</footer>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+
+    menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("show");
+    });
+</script>
+
+</body>
+</html>

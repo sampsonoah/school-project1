@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOAH INTERNATIONAL MINISTRIES | About</title>
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* ===== RESET ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.8;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: #1a252f;
+            padding: 15px 10%;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: #e67e22;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        /* ===== HERO / PAGE TITLE ===== */
+        .page-title {
+            height: 70vh;
+            background:
+                linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url("./images/about.jpg") center / cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+            margin-top: 70px;
+        }
+
+        .page-title h1 {
+            font-size: 3rem;
+        }
+
+        /* ===== ABOUT CONTENT ===== */
+        .about-container {
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .mission {
+            margin-bottom: 40px;
+        }
+
+        .mission h2,
+        .beliefs h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: #ddd;
+            margin: 40px 0;
+        }
+
+        /* ===== BELIEFS GRID ===== */
+        .belief-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .belief-item {
+            background: #f9f9f9;
+            padding: 25px;
+            border-left: 5px solid #e67e22;
+            border-radius: 5px;
+        }
+
+        .belief-item h3 {
+            color: #e67e22;
+            margin-bottom: 10px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #1a252f;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+
+            nav ul {
+                position: absolute;
+                top: 65px;
+                left: 0;
+                width: 100%;
+                background: #1a252f;
+                flex-direction: column;
+                display: none;
+                padding: 20px 0;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .page-title h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+    <nav>
+        <div class="logo">NOAH INTERNATIONAL MINISTRIES</div>
+
+        <i class="fas fa-bars menu-toggle" id="menuToggle"></i>
+
+        <ul id="navMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="sermons.html">Sermons</a></li>
+            <li><a href="ministries.html">Ministries</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- ===== HERO SECTION ===== -->
+<section class="page-title">
+    <h1>Our Story & Mission</h1>
+</section>
+
+<!-- ===== MAIN CONTENT ===== -->
+<main class="about-container">
+
+    <section class="mission">
+        <h2>Our Mission</h2>
+        <p>
+            To love God, love people, and make disciples in our city and beyond.
+            We believe that everyone has a place in God's family.
+        </p>
+    </section>
+
+    <hr>
+
+    <section class="beliefs">
+        <h2>What We Believe</h2>
+
+        <div class="belief-grid">
+            <div class="belief-item">
+                <h3>Faith</h3>
+                <p>
+                    We believe in the power of faith to transform lives
+                    and communities.
+                </p>
+            </div>
+
+            <div class="belief-item">
+                <h3>Community</h3>
+                <p>
+                    We are better together. Life is meant to be shared
+                    in fellowship and love.
+                </p>
+            </div>
+
+            <div class="belief-item">
+                <h3>Service</h3>
+                <p>
+                    Following Jesus means serving our neighbors
+                    with humility and compassion.
+                </p>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <p>&copy; 2026 NOAH INTERNATIONAL MINISTRIES. All rights reserved.</p>
+</footer>
+
+<!-- ===== JAVASCRIPT (MOBILE MENU) ===== -->
+<script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+
+    menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("show");
+    });
+</script>
+
+</body>
+</html>

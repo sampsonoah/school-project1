@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | NOAH INTERNATIONAL MINISTRIES</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ===== RESET ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.8;
+            color: #333;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* ===== HEADER & NAV ===== */
+        header {
+            background: #1a252f;
+            padding: 15px 10%;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            color: #e67e22;
+        }
+
+        /* ===== MOBILE MENU ===== */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            height: 3px;
+            width: 25px;
+            background: #fff;
+            margin: 4px 0;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        nav ul.mobile {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            background: #1a252f;
+            position: absolute;
+            top: 60px;
+            right: 10%;
+            width: 200px;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        nav ul.mobile.show {
+            display: flex;
+        }
+
+        nav ul.mobile li a {
+            color: #fff;
+        }
+
+        /* ===== PAGE TITLE / HERO ===== */
+        .page-title {
+            background: #34495e;
+            color: white;
+            text-align: center;
+            padding: 140px 20px 60px;
+            margin-top: 60px; /* header space */
+        }
+
+        .page-title h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .page-title p {
+            font-size: 1.1rem;
+        }
+
+        /* ===== CONTACT LAYOUT ===== */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 50px;
+            max-width: 1100px;
+            margin: 80px auto 60px;
+            padding: 0 10%;
+        }
+
+        /* ===== CONTACT FORM ===== */
+        .contact-form h2 {
+            color: #2c3e50;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .submit-btn {
+            background-color: #2c3e50;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #e67e22;
+        }
+
+        /* ===== CONTACT INFO ===== */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .info-block h3 {
+            color: #e67e22;
+            margin-bottom: 10px;
+        }
+
+        .map-placeholder {
+            background-color: #eee;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            color: #999;
+            font-weight: bold;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #1a252f;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 800px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <nav>
+            <div class="logo">NOAH INTERNATIONAL MINISTRIES</div>
+
+            <!-- Desktop Menu -->
+            <ul class="desktop">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="sermons.html">Sermons</a></li>
+                <li><a href="ministries.html">Ministries</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <!-- Mobile Hamburger -->
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Mobile Menu -->
+            <ul class="mobile" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="sermons.html">Sermons</a></li>
+                <li><a href="ministries.html">Ministries</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ===== HERO / PAGE TITLE ===== -->
+    <section class="page-title">
+        <h1>Get In Touch</h1>
+        <p>We’d love to hear from you. Send us a message or visit us!</p>
+    </section>
+
+    <!-- ===== MAIN CONTACT CONTENT ===== -->
+    <main class="contact-container">
+
+        <!-- Contact Form -->
+        <section class="contact-form">
+            <h2>Send a Message</h2>
+            <form action="#">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="email@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <select id="subject" name="subject">
+                        <option value="general">General Inquiry</option>
+                        <option value="prayer">Prayer Request</option>
+                        <option value="volunteer">Volunteering</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="How can we help you?"></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </section>
+
+        <!-- Contact Info Sidebar -->
+        <aside class="contact-info">
+            <div class="info-block">
+                <h3>Our Location</h3>
+                <p>123 Faith Avenue<br>Accra, Greater Accra<br>Ghana</p>
+            </div>
+
+            <div class="info-block">
+                <h3>Contact</h3>
+                <p>
+                    <strong>NOAH INTERNATIONAL MINISTRIES</strong><br>
+                    Phone: +233 (0) 558313324<br>
+                    Email: info@noahministries.org<br>
+                    Raising a People for God
+                </p>
+            </div>
+
+            <div class="map-placeholder">
+                Map View
+            </div>
+        </aside>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>&copy; 2026 NOAH INTERNATIONAL MINISTRIES. All rights reserved.</p>
+    </footer>
+
+    <!-- ===== JAVASCRIPT FOR MOBILE MENU ===== -->
+    <script>
+        const menuToggle = document.getElementById("menuToggle");
+        const navMenu = document.getElementById("navMenu");
+
+        menuToggle.addEventListener("click", () => {
+            navMenu.classList.toggle("show");
+            menuToggle.classList.toggle("open");
+        });
+    </script>
+
+</body>
+</html>

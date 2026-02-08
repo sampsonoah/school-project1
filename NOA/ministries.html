@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ministries | Grace Community Church</title>
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* ===== RESET ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.7;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: #1a252f;
+            padding: 15px 10%;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: #e67e22;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* ===== HERO ===== */
+        .page-title {
+            height: 60vh;
+            background:
+                linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url("./images/minhero.webp") center / cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+            margin-top: 70px;
+        }
+
+        .page-title h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .page-title p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* ===== MAIN CONTENT ===== */
+        .ministry-container {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .ministry-item {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 100px;
+        }
+
+        .ministry-item.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .ministry-image {
+            flex: 1;
+        }
+
+        .ministry-image img {
+            height: 350px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .ministry-text {
+            flex: 1;
+        }
+
+        .ministry-text h2 {
+            font-size: 2.2rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .ministry-text p {
+            color: #555;
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .btn-small {
+            display: inline-block;
+            padding: 10px 22px;
+            color: #e67e22;
+            border: 2px solid #e67e22;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-small:hover {
+            background: #e67e22;
+            color: white;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #1a252f;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+
+            nav ul {
+                position: absolute;
+                top: 65px;
+                left: 0;
+                width: 100%;
+                background: #1a252f;
+                flex-direction: column;
+                display: none;
+                padding: 20px 0;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .page-title h1 {
+                font-size: 2.2rem;
+            }
+
+            .ministry-item,
+            .ministry-item.reverse {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .ministry-image img {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+    <nav>
+        <div class="logo">NOAH INTERNATIONAL MINISTRIES</div>
+
+        <i class="fas fa-bars menu-toggle" id="menuToggle"></i>
+
+        <ul id="navMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="sermons.html">Sermons</a></li>
+            <li><a href="ministries.html">Ministries</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="page-title">
+    <div>
+        <h1>Our Ministries</h1>
+        <p>There is a place for everyone to serve and grow</p>
+    </div>
+</section>
+
+<!-- ===== MAIN ===== -->
+<main class="ministry-container">
+
+    <section class="ministry-item">
+        <div class="ministry-image">
+            <img src="./images/min1.jfif" alt="Youth Ministry">
+        </div>
+        <div class="ministry-text">
+            <h2>Youth Ministry</h2>
+            <p>
+                Empowering the next generation to lead lives of purpose
+                and faith. Our youth meet every Friday night for worship,
+                small groups, and fun activities.
+            </p>
+            <a href="contact.html" class="btn-small">Get Involved</a>
+        </div>
+    </section>
+
+    <section class="ministry-item reverse">
+        <div class="ministry-image">
+            <img src="./images/min2.jfif" alt="Children's Ministry">
+        </div>
+        <div class="ministry-text">
+            <h2>Grace Kids</h2>
+            <p>
+                A safe and fun environment where children learn about the Bible
+                through creative storytelling, crafts, and music during our
+                Sunday services.
+            </p>
+            <a href="contact.html" class="btn-small">Learn More</a>
+        </div>
+    </section>
+
+    <section class="ministry-item">
+        <div class="ministry-image">
+            <img src="./images/min3.jfif" alt="Community Outreach">
+        </div>
+        <div class="ministry-text">
+            <h2>Community Outreach</h2>
+            <p>
+                Taking the love of God beyond our walls. From weekly food
+                pantry outreach to neighborhood clean-ups, we believe in
+                being the hands and feet of Jesus.
+            </p>
+            <a href="contact.html" class="btn-small">Join the Team</a>
+        </div>
+    </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <p>&copy; 2026 Grace Community Church. All rights reserved.</p>
+</footer>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+
+    menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("show");
+    });
+</script>
+
+</body>
+</html>

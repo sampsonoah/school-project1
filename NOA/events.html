@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Events | NOAH INTERNATIONAL MINISTRIES</title>
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* ===== RESET ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.7;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: #1a252f;
+            padding: 15px 10%;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: #e67e22;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* ===== HERO ===== */
+        .page-title {
+            height: 55vh;
+            background:
+                linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url("./images/events-hero.jpg") center / cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+            margin-top: 70px;
+        }
+
+        .page-title h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .page-title p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* ===== EVENTS ===== */
+        .events-container {
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .event-row {
+            display: flex;
+            gap: 30px;
+            background: white;
+            border-bottom: 1px solid #eee;
+            padding: 30px 0;
+        }
+
+        .event-row:last-child {
+            border-bottom: none;
+        }
+
+        .event-date {
+            background: #2c3e50;
+            color: white;
+            min-width: 90px;
+            height: 90px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+        }
+
+        .event-date .day {
+            font-size: 2rem;
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        .event-date .month {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .event-details h3 {
+            color: #e67e22;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        .event-details p {
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #1a252f;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+
+            nav ul {
+                position: absolute;
+                top: 65px;
+                left: 0;
+                width: 100%;
+                background: #1a252f;
+                flex-direction: column;
+                display: none;
+                padding: 20px 0;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .page-title h1 {
+                font-size: 2.2rem;
+            }
+
+            .event-row {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .event-date {
+                margin: 0 auto 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+    <nav>
+        <div class="logo">NOAH INTERNATIONAL MINISTRIES</div>
+
+        <i class="fas fa-bars menu-toggle" id="menuToggle"></i>
+
+        <ul id="navMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="sermons.html">Sermons</a></li>
+            <li><a href="ministries.html">Ministries</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="page-title">
+    <div>
+        <h1>Upcoming Events</h1>
+        <p>Stay connected with our church family</p>
+    </div>
+</section>
+
+<!-- ===== MAIN ===== -->
+<main class="events-container">
+
+    <div class="event-row">
+        <div class="event-date">
+            <span class="day">25</span>
+            <span class="month">JAN</span>
+        </div>
+        <div class="event-details">
+            <h3>Sunday Worship Service</h3>
+            <p><strong>Time:</strong> 10:00 AM – 11:30 AM</p>
+            <p><strong>Location:</strong> Main Sanctuary</p>
+            <p>Join us for a powerful time of worship and a life-changing word.</p>
+        </div>
+    </div>
+
+    <div class="event-row">
+        <div class="event-date">
+            <span class="day">28</span>
+            <span class="month">JAN</span>
+        </div>
+        <div class="event-details">
+            <h3>Mid-Week Bible Study</h3>
+            <p><strong>Time:</strong> 7:00 PM – 8:30 PM</p>
+            <p><strong>Location:</strong> Fellowship Hall</p>
+            <p>A deeper dive into the scriptures. Open to all ages.</p>
+        </div>
+    </div>
+
+    <div class="event-row">
+        <div class="event-date">
+            <span class="day">14</span>
+            <span class="month">FEB</span>
+        </div>
+        <div class="event-details">
+            <h3>Couples’ Dinner Night</h3>
+            <p><strong>Time:</strong> 6:30 PM</p>
+            <p><strong>Location:</strong> Community Center</p>
+            <p>A special evening for couples to fellowship and grow together. Please RSVP by Feb 1st.</p>
+        </div>
+    </div>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <p>&copy; 2026 NOAH INTERNATIONAL MINISTRIES. All rights reserved.</p>
+</footer>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+
+    menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("show");
+    });
+</script>
+
+</body>
+</html>
